@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <button 
+            <!-- <button 
                 class="btn btn-primary"
                 (click)="onlyOdd = !onlyOdd">
                 Only sho odd numbers
@@ -15,7 +15,7 @@
                         *ngFor="let odd of oddNumbers">
                         {{ odd }}
                     </li>
-                </div>
+                </div> -->
                 <!-- <div *ngIf="!onlyOdd">
                     <li class="list-group-item"
                         [ngClass]="{odd: even % 2 !== 0}"
@@ -36,16 +36,16 @@
                     </div>
                 </ng-template> -->
 
-                <div *appUnless="!onlyOdd">
+                <!-- <div *appUnless="!onlyOdd">
                     <li class="list-group-item"
                         [ngClass]="{odd: even % 2 !== 0}"
                         [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow': 'transparent'}"
                         *ngFor="let even of evenNumbers">
                         {{ even }}
                     </li>
-                </div>
+                </div> -->
 
-            </ul>
+            <!-- </ul>
             <p appBasicHighlight>Style me with a basic directive</p>
             <p [appBetterHighlight]="'red'" defaultColor="yellow">Style me with a batter basic directive</p>
 
@@ -55,7 +55,8 @@
                 <p *ngSwitchCase="15">15</p>
                 <p *ngSwitchCase="100">100</p>
                 <p *ngSwitchDefault>default</p>
-            </div>
-        </div>
+            </div> -->
+            <div ccCardhover><P>Style me with a batter basic directive</P></div>
+        </div> 
     </div>
 </div>
