@@ -10,6 +10,7 @@ export class DiretivasLabsComponent implements OnInit {
   oddNumbers = [1, 2, 3, 4, 5];
   evenNumbers = [6, 7, 8, 9];
   onlyOdd = false;
+  value = 5;
 
   constructor() { }
 
