@@ -1,3 +1,4 @@
+import { DropDownDirective } from './shared/dropdown.directive';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
@@ -29,7 +30,8 @@ import { CardhoverDirective } from './card-hover/cardhover.directive';
     BasicHighlightDirective,
     BetterHighlightDirective,
     UnlessDirective,
-    CardhoverDirective
+    CardhoverDirective,
+    DropDownDirective
   ],
   imports: [
     BrowserModule
