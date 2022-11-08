@@ -1,9 +1,12 @@
-import { DropDownDirective } from './shared/dropdown.directive';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
+import { DropDownDirective } from './shared/dropdown.directive';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 import { AppComponent } from './app.component';
+import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
+import { CardhoverDirective } from './card-hover/cardhover.directive';
 import { DiretivasLabsComponent } from './diretivas-labs/diretivas-labs.component';
 import { HeaderComponent } from './header/header.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
@@ -12,9 +15,7 @@ import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component
 import { RecipesComponent } from './recipes/recipes.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 import { UnlessDirective } from './unless-directive/unless.directive';
-import { CardhoverDirective } from './card-hover/cardhover.directive';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { CardhoverDirective } from './card-hover/cardhover.directive';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
