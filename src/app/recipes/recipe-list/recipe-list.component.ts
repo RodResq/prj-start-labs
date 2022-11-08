@@ -1,3 +1,4 @@
+import { RecipeService } from './../recipe.service';
 import { EventEmitter } from '@angular/core';
 import { Component, OnInit, Output } from '@angular/core';
 import { Recipe } from './../recipe.model';
@@ -17,9 +18,10 @@ export class RecipeListComponent implements OnInit {
     'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg')
   ];
 
-  constructor() { }
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit(): void {
+    this.recipes = this.recipeService.getRecipes();
   }
 
   onSelectRecipeEl(recipe: Recipe) {
