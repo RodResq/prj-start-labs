@@ -1,3 +1,4 @@
+import { AppRountingModule } from './app-routing.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
@@ -35,7 +36,8 @@ import { UnlessDirective } from './unless-directive/unless.directive';
     DropDownDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRountingModule
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]
