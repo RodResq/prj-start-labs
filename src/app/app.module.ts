@@ -1,3 +1,4 @@
+import { AuthComponent } from './auth/auth.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -42,7 +43,8 @@ import { UnlessDirective } from './unless-directive/unless.directive';
     CardhoverDirective,
     DropDownDirective,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
