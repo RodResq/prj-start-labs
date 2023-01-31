@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 interface AuthResponseDate {
     idToken: string,
     email: string,
+    kind: string
     refreshToken: string,
     expiresIn: string,
     localId: string,
