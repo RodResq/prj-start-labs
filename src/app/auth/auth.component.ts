@@ -10,6 +10,8 @@ import { Component } from '@angular/core';
 export class AuthComponent {
 
     isLoggingMode = true;
+    isLoading = false;
+    error: string = null;
 
     constructor(private authService: AuthService) {}
 
@@ -24,13 +26,17 @@ export class AuthComponent {
         const email = form.value.email;
         const password = form.value.password;
 
+        this.isLoading = true;
         if (this.isLoggingMode) {
 
         } else {
             this.authService.signup(email, password).subscribe(respData => {
                 console.log(respData);
+                this.isLoading = false;
             }, error => {
                 console.log(error);
+                this.error = 'An Error Ocurred!'
+                this.isLoading = false;
             });
         }
         form.reset();
