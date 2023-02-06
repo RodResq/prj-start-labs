@@ -33,11 +33,8 @@ export class AuthComponent {
             this.authService.signup(email, password).subscribe(respData => {
                 console.log(respData);
                 this.isLoading = false;
-            }, errorResponse => {
-                switch(errorResponse.error.error.message) {
-                  case 'EMAIL_EXISTS':
-                    this.error = 'This email exists already';
-                }
+            }, errorMessage => {
+                this.error = errorMessage;
                 this.isLoading = false;
             });
         }

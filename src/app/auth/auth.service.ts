@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 
 interface AuthResponseDate {
@@ -13,7 +15,7 @@ interface AuthResponseDate {
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
-    
+
     constructor(private http: HttpClient) {}
 
     signup(email: string, password: string) {
@@ -23,7 +25,19 @@ export class AuthService {
                 email: email,
                 password: password,
                 returnSecureToken: true
-            } 
+            }
+        ).pipe(
+          catchError(errorResp => {
+            let errorMessage = 'An unknown error ocurred!'
+            if (!errorResp.error || !errorResp.error.error) {
+              return throwError(errorMessage);
+            }
+            switch(errorResp.error.error.message) {
+              case 'EMAIL_EXISTS':
+                errorMessage = 'This email exists already';
+            }
+            return throwError(errorMessage);
+          })
         )
     }
 
